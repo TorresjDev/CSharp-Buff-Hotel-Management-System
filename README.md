@@ -1,112 +1,100 @@
-# Buff Hotel Management System Documentation
+# 🏨 **Buff Hotel Management System** 💻
 
-### **Project Overview**
-
-The Buff Hotel Management System is a terminal-based application designed to manage hotel reservations and room statuses efficiently. This application features user authentication and dynamic room management capabilities.
+Simplify hotel management with the **Buff Hotel Management System**—a robust, terminal-based application built with **C# .NET** ⚙️ and **MySQL** 💾. Designed to streamline operations, it handles reservations, room statuses, and user authentication effortlessly. 🎯
 
 ---
 
-### **Getting Started**
+## 🛠️ **Key Features**
 
-1. **Access Credentials**:
-
-   - **Username**: `alice`
-   - **Password**: `alice123`
-
-2. **Running the Program**:
-   - Clone the repository and navigate to the project directory.
-   - Modify env credentials.
-   - Build and run the project:
-     ```bash
-     dotnet build
-     dotnet run
-     ```
+- 🏡 **Dynamic Room Management**: Real-time updates on room availability and status.
+- 🔒 **Secure Authentication**: Keep data safe with authorized access only.
+- 📆 **Reservation Tracking**: Manage active, completed, and all reservations seamlessly.
+- ⚡ **Efficient Check-In/Out**: Process guest actions quickly and update room statuses dynamically.
+- 🪹 **Error Handling**: Clear feedback for invalid inputs and system issues.
+- 🔄 **Extensibility**: Modular design for easy future enhancements.
 
 ---
 
-### **Features and Menu Options**
+## 🚀 **Getting Started**
 
-1. **Show Available Rooms**:
+### 1 **Set Up Credentials**
+Use the following to log in:
+- **Username**: `alice`
+- **Password**: `alice123`
 
-   - Lists all rooms currently available for reservation.
+### 2 **Run the Application**
 
-2. **Check-In**:
+1. Clone the repository and navigate to the project folder:
+   ```bash
+   git clone https://github.com/YourRepo/BuffHotelManagementSystem.git
+   cd BuffHotelManagementSystem
+   ```
 
-   - Enter room capacity and reserve customer to an available room.
+2. Configure your database credentials in the `.env` file.
 
-3. **Show Active Reservations**:
-
-   - Displays all ongoing reservations.
-
-4. **Check-Out**:
-
-   - Processes customer check-out and updates the room's availability.
-
-5. **Show All Rooms**:
-
-   - Displays a complete list of rooms grouped by their status.
-
-6. **Show Completed Reservations**:
-
-   - Lists all past reservations marked as completed.
-
-7. **Show All Reservations**:
-
-   - Displays a comprehensive list of all reservations (active and completed).
-
-8. **Log Out**:
-   - Exits the system securely.
+3. Build and launch the application:
+   ```bash
+   dotnet build
+   dotnet run
+   ```
 
 ---
 
-### **Key Components**
+## 📜 **Menu Options**
 
-1. **Authentication**:
-
-   - Ensures DB access is limited to authorized personnel.
-
-2. **Dynamic Room and Reservation Management**:
-
-   - Allows real-time updates for room availability and reservation statuses.
-
-3. **Error Handling**:
-
-   - Provides clear feedback for invalid inputs or system errors.
-
-4. **Extensibility**:
-   - Modular design supports future enhancements and new features.
+- 🛏️ **Show Available Rooms**: View all unoccupied rooms.
+- 🔑 **Check-In**: Assign customers to suitable rooms based on capacity.
+- 📋 **Show Active Reservations**: Display all ongoing bookings.
+- 🚪 **Check-Out**: Mark rooms as available upon guest departure.
+- 📂 **Show All Rooms**: Categorize rooms by status (available, reserved, etc.).
+- 🗂️ **Show Completed Reservations**: Review past guest stays.
+- 📜 **Show All Reservations**: Access a full log of both active and completed reservations.
+- 🔓 **Log Out**: Exit securely.
 
 ---
 
-### **Developer Notes**
+## 🏗️ **Behind the Scenes**
 
-1. **Code Organization**:
+### 🔍 **Core Components**
 
-   - Core classes:
-   - `DBConnect`: Manages database connectivity.
-   - `Service`: Manages database interactions for rooms and reservations.
-   - `HotelController`: Integrates user input with system operations.
-
-2. **Testing**:
-   - Use DB mock data for testing all menu options and workflows.
-   - Validate Hotel services for room availability and reservation processes.
+- **DBConnect**: Manages secure database connectivity, loads `.env` configurations, and provides helper methods like `EnsureConnection` and `CloseConnection`.
+- **Service**: Contains methods for database interactions, such as retrieving rooms and reservations, and handling check-in/check-out processes.
+- **HotelController**: Handles user interaction with the system, including the main menu, and coordinates with other components.
+- **MethodHelper**: Provides utility methods for user input validation and filtering data.
 
 ---
 
-### **Troubleshooting**
+## 💡 **Troubleshooting**
 
-1. **Common Errors**:
+### ⚙️ **Common Issues**
 
-   - _Database connection issues_: Verify `.env` settings must be hardcoded when debugging.
-   - _Stored procedure errors_: Ensure all SQL scripts exists and are executing in the database.
-   - _Login failures_: Confirm the hardcoded credentials.
+1. **Database Connectivity**: Ensure `.env` credentials and SQL procedures are correct.
+2. **Login Errors**: Verify the username and password.
+3. **Debugging**: Use breakpoints in key files like `Program.cs`, `Controllers.cs`, `Service.cs`, and `MethodHelper.cs`.
 
-2. **Debugging**:
-   - Set breakpoints in `Program.cs`, `Controller.cs` and `Service.cs` for detailed debugging.
-   - Check console output for error messages.
 
 ---
 
-### **Contact**
+## 📂 **Project Structure**
 
-For assistance or feedback, contact the project developer: **Jesus Torres**.
+```plaintext
+/BuffHotelManagementSystem
+│
+├── 📂 CodeFilesSQL        # SQL scripts for database setup
+├── 📂 Controllers         # Business logic and operations (e.g., HotelController.cs)
+├── 📂 Models              # Data models (e.g., Room.cs, Reservation.cs)
+├── 📂 Services            # Service methods for database interactions
+├── 📂 Utilities           # Helper methods (e.g., MethodHelper.cs)
+├── 📄 BuffHotel.csproj    # Project file
+├── 📄 BuffHotel.sln       # Solution file
+├── 📄 DBConnect.cs        # Database connection management
+├── 📄 Program.cs          # Entry point for the application
+└── 📄 README.md           # 📜 Documentation
+```
+
+---
+
+## 📞 **Contact**
+
+For support, feedback, or inquiries, reach out to:  
+**Jesus Torres** ✉️
